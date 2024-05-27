@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - AWS_REGION=us-east-1
+      - COGNITO_CLIENT_ID=1g4hqn4e9clpu4cpo4e8e2fiod
+      - COGNITO_USER_POOL_ID=us-east-1_PWWnGKqh2
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend

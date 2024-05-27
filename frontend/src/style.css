@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#game-setup {
+    margin-bottom: 20px;
+}
+
+#game-id-display {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+#game-board {
+    display: none; /* Hidden by default, shown when game starts */
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.game-cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    border: 1px solid #000;
+}
