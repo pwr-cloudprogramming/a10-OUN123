@@ -48,16 +48,13 @@ The ease with which AWS Cognito adds user authentication and authorization also 
 
 AWS Cognito Integration
 
-Backend Changes
-Added dependencies for AWS SDK and JSON Web Tokens (JWT).
-Created an authentication service using AWS SDK to verify user data with Cognito.
-Defined endpoints that require authorization.
+Backend Modifications Dependencies for JSON Web Tokens (JWT) and the AWS SDK have been added. Using the AWS SDK, an authentication service was developed to validate user information with Cognito. specified endpoints for which permission is needed.
 
-Frontend Changes
-Configured the AWS SDK to connect with the user pool in AWS Cognito.
-Created separate registration, verification, and login forms.
-After successful login, access and refresh tokens are saved in localStorage.
-Added logic to refresh the access token automatically when needed.
-Implemented frontend logic to add access tokens to requests sent to the backend.
-Added a logout function that clears session data and notifies Cognito to end the session.
+Frontend Modifications
+set up the AWS SDK to establish a connection with the AWS Cognito user pool.
+distinct forms for login, verification, and registration were created.
+Tokens for access and refresh are saved in localStorage following a successful login.
+Additional logic to automatically renew the access token as required.
+Added access tokens to requests sent to the backend by implementing frontend logic.
+Added a logout feature that alerts Cognito to the end of the session and removes any remaining session data.
 
