@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a username.');
             return;
         }
-        fetch('http://localhost:3000/start', {
+        fetch('/start', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
-                'Authorization': token
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ username })
         })
@@ -51,11 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a username and a game ID.');
             return;
         }
-        fetch('http://localhost:3000/join', {
+        fetch('/join', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
-                'Authorization': token
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ username, gameId })
         })
@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function makeMove(index) {
-        fetch('http://localhost:3000/move', {
+        fetch('/move', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
-                'Authorization': token
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify({ gameId: gameId, symbol: playerSymbol, tile: index })
         })
@@ -114,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     logoutButton.addEventListener('click', function() {
         localStorage.removeItem('accessToken');
-        localStorage.removeItem('refreshToken');
         alert('Logged out successfully!');
         window.location.href = '/login.html';
     });

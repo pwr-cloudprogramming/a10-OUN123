@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('reg-email').value;
             const password = document.getElementById('reg-password').value;
             try {
-                const response = await fetch('http://localhost:3000/register', {
+                const response = await fetch('/register', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -19,9 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const message = await response.text();
                 alert(message);
                 if (response.ok) {
-                    // Save the email in localStorage for the verification step
                     localStorage.setItem('emailForVerification', email);
-                    // Redirect to the verification page
                     window.location.href = '/verify.html';
                 }
             } catch (err) {
@@ -33,10 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (verifyForm) {
         verifyForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const email = localStorage.getItem('emailForVerification'); // Retrieve the email from localStorage
+            const email = localStorage.getItem('emailForVerification');
             const code = document.getElementById('verify-code').value;
             try {
-                const response = await fetch('http://localhost:3000/verify', {
+                const response = await fetch('/verify', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -46,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const message = await response.text();
                 alert(message);
                 if (response.ok) {
-                    // Redirect to the login page after successful verification
                     window.location.href = '/login.html';
                 }
             } catch (err) {
@@ -61,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
             try {
-                const response = await fetch('http://localhost:3000/login', {
+                const response = await fetch('/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
