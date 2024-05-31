@@ -1,19 +1,16 @@
-TicTacToe with AWS Cognito
+# TicTacToe with AWS Cognito
 
-Name: Ziad Oun
+**Name:** Ziad Oun
+**ID:** 269538
+**Group:** 3
+**Date:** 27/05/2024
 
-ID: 269538
-
-Group: 3
-
-Date: 27/05/2024
-
-Environment Architecture
+## Environment Architecture
 
 This project is a TicTacToe game application that uses AWS Cognito for user authentication and authorization.
 
 
-Preview
+## Preview
 
 ![Screenshot 2024-05-27 215525](https://github.com/pwr-cloudprogramming/a10-OUN123/assets/116722639/0ff5c845-f3f3-4d50-b5a1-b1f915309291)
 
@@ -25,57 +22,38 @@ Preview
 
 ![Screenshot 2024-05-27 220043](https://github.com/pwr-cloudprogramming/a10-OUN123/assets/116722639/025d1d6f-11dc-4897-8cb7-e52b7d9125c0)
 
-Reflections
+## Reflections
 
-What Did You Learn?
+### What Did You Learn?
 
-I gained knowledge about controlling user authorization and authentication with AWS Cognito.
+- I gained knowledge about controlling user authorization and authentication with AWS Cognito.
+- I learned how to configure and launch a secure AWS application.
+-Additionally, I discovered how to use AWS Cognito to add permission and authentication.
 
-I learned how to configure and launch a secure AWS application.
+### What Obstacles Did You Overcome?
+- It was difficult to fix GHI.
+- Made the template and backend functional.
+- Integrated AWS Cognito for user permission and authentication.
 
-Additionally, I discovered how to use AWS Cognito to add permission and authentication.
+### What Helped You Most in Overcoming Obstacles?
+- AWS documentation and examples were very helpful.
+- Hands-on expertise and experimentation with various solutions.
 
-What Obstacles Did You Overcome?
+### Was There Something That Surprised You?
+- The simplicity and potency of AWS Cognito's user authentication management.
+- The ease of adding user authentication and authorization with AWS Cognito.
 
-It was difficult for me to fix Docker Compose.
+## AWS Cognito Integration
 
-I made the template and backend functional.
+### Backend Modifications
+- Added dependencies for JSON Web Tokens (JWT) and the AWS SDK.
+- Developed an authentication service using the AWS SDK to validate user information with Cognito.
+- Specified endpoints that require permission.
 
-For user permission and authentication, I integrated AWS Cognito.
-
-What Helped You Most in Overcoming Obstacles?
-
-It was quite helpful to go to the AWS documentation and examples.
-
-Overcoming the challenges required a combination of hands-on expertise and experimentation with various solutions.
-
-Was There Something That Surprised You?
-
-The simplicity and potency of AWS Cognito's user authentication management astonished me.
-
-The ease with which AWS Cognito adds user authentication and authorization also pleased me.
-
-AWS Cognito Integration
-
-Backend Modifications
-
-Dependencies for JSON Web Tokens (JWT) and the AWS SDK have been added.
-
-Using the AWS SDK, an authentication service was developed to validate user information with Cognito.
-
-Specified endpoints for which permission is needed.
-
-Frontend Modifications
-
-Set up the AWS SDK to establish a connection with the AWS Cognito user pool.
-
-Distinct forms for login, verification, and registration were created.
-
-Tokens for access and refresh are saved in localStorage following a successful login.
-
-Additional logic to automatically renew the access token as required.
-
-Added access tokens to requests sent to the backend by implementing frontend logic.
-
-Added a logout feature that alerts Cognito to the end of the session and removes any remaining session data.
-
+### Frontend Modifications
+- Set up the AWS SDK to connect with the AWS Cognito user pool.
+- Created distinct forms for login, verification, and registration.
+- Saved tokens for access and refresh in `localStorage` after successful login.
+- Added logic to automatically renew the access token as needed.
+- Implemented frontend logic to include access tokens in requests to the backend.
+- Added a logout feature that alerts Cognito to the end of the session and clears session data.
