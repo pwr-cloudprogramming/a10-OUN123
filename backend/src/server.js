@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { registerUser, verifyUser, loginUser } = require('./authService'); // Make sure these functions are correctly implemented
+const { registerUser, verifyUser, loginUser } = require('./authService'); // Ensure these functions are correctly implemented
 
 const app = express();
 const PORT = 3000;
@@ -11,7 +11,8 @@ app.use(bodyParser.json());
 
 let games = {};
 
-app.post('/start', (req, res) => {
+app.post('/api/start', (req, res) => {
+    console.log('Start request received:', req.body);
     const { username } = req.body;
     const gameId = Date.now().toString();
     games[gameId] = {
@@ -23,7 +24,8 @@ app.post('/start', (req, res) => {
     res.json({ gameId, symbol: 'X' });
 });
 
-app.post('/join', (req, res) => {
+app.post('/api/join', (req, res) => {
+    console.log('Join request received:', req.body);
     const { username, gameId } = req.body;
     const game = games[gameId];
     if (game && !game.players['O']) {
@@ -38,7 +40,8 @@ app.post('/join', (req, res) => {
     }
 });
 
-app.post('/move', (req, res) => {
+app.post('/api/move', (req, res) => {
+    console.log('Move request received:', req.body);
     const { gameId, symbol, tile } = req.body;
     const game = games[gameId];
     if (game && game.board[tile] === null && game.turn === symbol) {
@@ -52,7 +55,8 @@ app.post('/move', (req, res) => {
     }
 });
 
-app.get('/game', (req, res) => {
+app.get('/api/game', (req, res) => {
+    console.log('Game request received:', req.query);
     const { gameId } = req.query;
     const game = games[gameId];
     if (game) {
@@ -62,7 +66,8 @@ app.get('/game', (req, res) => {
     }
 });
 
-app.post('/register', async (req, res) => {
+app.post('/api/register', async (req, res) => {
+    console.log('Register request received:', req.body);
     const { email, password } = req.body;
     try {
         const result = await registerUser(email, password);
@@ -72,7 +77,8 @@ app.post('/register', async (req, res) => {
     }
 });
 
-app.post('/verify', async (req, res) => {
+app.post('/api/verify', async (req, res) => {
+    console.log('Verify request received:', req.body);
     const { email, code } = req.body;
     try {
         const result = await verifyUser(email, code);
@@ -82,12 +88,14 @@ app.post('/verify', async (req, res) => {
     }
 });
 
-app.post('/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
+    console.log('Login request received:', req.body);
     const { email, password } = req.body;
     try {
         const token = await loginUser(email, password);
         res.status(200).json({ token });
     } catch (error) {
+        console.error('Login failed:', error.message);
         res.status(400).send('Login failed: ' + error.message);
     }
 });

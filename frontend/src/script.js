@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a username.');
             return;
         }
-        fetch('/start', {
+        fetch('/api/start', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a username and a game ID.');
             return;
         }
-        fetch('/join', {
+        fetch('/api/join', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function makeMove(index) {
-        fetch('/move', {
+        fetch('/api/move', {
             method: 'POST',
             headers: { 
                 'Content-Type': 'application/json',

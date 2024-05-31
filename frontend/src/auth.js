@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('reg-email').value;
             const password = document.getElementById('reg-password').value;
             try {
-                const response = await fetch('/register', {
+                const response = await fetch('http://localhost:3000/api/register', {  // <-- Note the absolute URL
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = localStorage.getItem('emailForVerification');
             const code = document.getElementById('verify-code').value;
             try {
-                const response = await fetch('/verify', {
+                const response = await fetch('http://localhost:3000/api/verify', {  // <-- Note the absolute URL
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const email = document.getElementById('login-email').value;
             const password = document.getElementById('login-password').value;
             try {
-                const response = await fetch('/login', {
+                const response = await fetch('http://localhost:3000/api/login', {  // <-- Note the absolute URL
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
