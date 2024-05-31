@@ -1,12 +1,9 @@
 # TicTacToe with AWS Cognito
 
-**Name:** Ziad Oun
-
-**ID:** 269538
-
-**Group:** 3
-
-**Date:** 27/05/2024
+- **Name:** Ziad Oun
+- **ID:** 269538
+- **Group:** 3
+- **Date:** 27/05/2024
 
 ## Environment Architecture
 
