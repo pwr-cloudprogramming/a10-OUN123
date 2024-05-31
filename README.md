@@ -1,11 +1,15 @@
 TicTacToe with AWS Cognito
 
 Name: Ziad Oun
+
 ID: 269538
+
 Group: 3
+
 Date: 27/05/2024
 
 Environment Architecture
+
 This project is a TicTacToe game application that uses AWS Cognito for user authentication and authorization.
 
 
@@ -26,35 +30,52 @@ Reflections
 What Did You Learn?
 
 I gained knowledge about controlling user authorization and authentication with AWS Cognito.
-I gained knowledge on how to configure and launch a secure AWS application.
+
+I learned how to configure and launch a secure AWS application.
+
 Additionally, I discovered how to use AWS Cognito to add permission and authentication.
 
 What Obstacles Did You Overcome?
 
 It was difficult for me to fix Docker Compose.
+
 I made the template and backend functional.
+
 For user permission and authentication, I integrated AWS Cognito.
 
 What Helped You Most in Overcoming Obstacles?
 
 It was quite helpful to go to the AWS documentation and examples.
+
 Overcoming the challenges required a combination of hands-on expertise and experimentation with various solutions.
 
 Was There Something That Surprised You?
 
 The simplicity and potency of AWS Cognito's user authentication management astonished me.
-The ease with which AWS Cognito adds user authentication and authorization also pleased me.
 
+The ease with which AWS Cognito adds user authentication and authorization also pleased me.
 
 AWS Cognito Integration
 
-Backend Modifications Dependencies for JSON Web Tokens (JWT) and the AWS SDK have been added. Using the AWS SDK, an authentication service was developed to validate user information with Cognito. specified endpoints for which permission is needed.
+Backend Modifications
+
+Dependencies for JSON Web Tokens (JWT) and the AWS SDK have been added.
+
+Using the AWS SDK, an authentication service was developed to validate user information with Cognito.
+
+Specified endpoints for which permission is needed.
 
 Frontend Modifications
-set up the AWS SDK to establish a connection with the AWS Cognito user pool.
-distinct forms for login, verification, and registration were created.
+
+Set up the AWS SDK to establish a connection with the AWS Cognito user pool.
+
+Distinct forms for login, verification, and registration were created.
+
 Tokens for access and refresh are saved in localStorage following a successful login.
+
 Additional logic to automatically renew the access token as required.
+
 Added access tokens to requests sent to the backend by implementing frontend logic.
+
 Added a logout feature that alerts Cognito to the end of the session and removes any remaining session data.
 
